@@ -36,6 +36,11 @@ echo "$info" >> output.txt
 echo "$info"
 echo
 
+# Set up Git to use the personal access token
+GITHUB_TOKEN="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"
+REPO_URL="https://$GITHUB_TOKEN@github.com/LukaNikolaisvili/commit-bot.git"
+git remote set-url origin $REPO_URL
+
 # Ship it
 git add output.txt
 git commit -m "$info"
