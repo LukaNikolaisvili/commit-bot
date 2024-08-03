@@ -37,9 +37,15 @@ echo "$info"
 echo
 
 # Set up Git to use the personal access token
-GITHUB_TOKEN="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"
+GITHUB_TOKEN="your_personal_access_token"
 REPO_URL="https://$GITHUB_TOKEN@github.com/LukaNikolaisvili/commit-bot.git"
 git remote set-url origin $REPO_URL
+
+# Configure Git to handle divergent branches by merging
+git config pull.rebase false
+
+# Pull the latest changes
+git pull
 
 # Ship it
 git add output.txt
